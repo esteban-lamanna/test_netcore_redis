@@ -1,0 +1,2 @@
+# test_netcore_redis
+test_netcore_redis
