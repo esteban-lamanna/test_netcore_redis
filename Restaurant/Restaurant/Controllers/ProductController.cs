@@ -15,9 +15,9 @@ namespace Restaurant.Controllers
             _productRepository = foodRepository;
         }
 
-        [Route("invalidate/{key}")]
-        [HttpGet]
-        public async Task<IActionResult> Invalidate(string key)
+        [Route("invalidate")]
+        [HttpDelete]
+        public async Task<IActionResult> Invalidate([FromQuery] string key)
         {
             await _productRepository.InvalidateCacheAsync(key);
 

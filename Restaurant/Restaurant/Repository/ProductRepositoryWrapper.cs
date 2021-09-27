@@ -10,7 +10,6 @@ namespace Restaurant.Repository
         readonly IDistributedCache _distributedCache;
         readonly ProductRepository _productRepository;
 
-
         public ProductRepositoryWrapper(ProductRepository productRepository, IDistributedCache distributedCache)
         {
             _productRepository = productRepository;

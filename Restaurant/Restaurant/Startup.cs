@@ -26,7 +26,7 @@ namespace Restaurant
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = Configuration.GetSection("Redis")["ConnectionString"];
-                options.InstanceName = "SampleInstance";
+                options.InstanceName = Configuration.GetSection("Redis")["InstanceName"];
             });
 
             services.AddControllers();
