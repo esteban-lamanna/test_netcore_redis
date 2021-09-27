@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>4237b699-0736-4c6d-97a5-ac5cc320f350</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Dapper" Version="2.0.30" />
+	  <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="5.0.1" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+	  <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="StackExchange.Redis" Version="2.2.50" />
+	  <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.20" />
+  </ItemGroup>
+
+
+</Project>

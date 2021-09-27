@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  restaurant:
+    container_name: restaurant-api
+    build: Restaurant/.
+    ports:
+      - "5000:80"
+    depends_on:
+      - redis
+      - sql
+    links:
+      - redis    
+      
+      
+  redis:
+     container_name: redis
+     image: redis:alpine
+     ports:
+       - "6379:6379"
+       
+       
+  sql:
+    container_name: sql
+    image: mcr.microsoft.com/mssql/server 
+    restart: always
+    ports:
+        - "1433:1433"   
+    environment:      
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=Sqlc0ntainersFTW! 
+    volumes:
+        - C:/EstebanSQL/data:/var/opt/mssql/data
+        - C:/EstebanSQL/log:/var/opt/mssql/log
+        - C:/EstebanSQL/secrets:/var/opt/mssql/secrets
