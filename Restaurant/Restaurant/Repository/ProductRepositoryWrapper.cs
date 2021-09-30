@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
+using Restaurant.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,6 +37,16 @@ namespace Restaurant.Repository
             });
 
             return dataFromDatabase;
+        }
+
+        public Task<Product> GetByNameAsync(string name)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task UpdateProductQuantityAsync(Product product)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

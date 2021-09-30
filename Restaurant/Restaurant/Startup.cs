@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Restaurant.Logic;
 using Restaurant.Repository;
 
 namespace Restaurant
@@ -19,9 +20,14 @@ namespace Restaurant
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProductRepository, ProductRepositoryWrapper>();
 
-            services.AddTransient<ProductRepository>();
+            //for cache testing
+            //services.AddTransient<IProductRepository, ProductRepositoryWrapper>();
+            //services.AddTransient<ProductRepository>();
+
+            services.AddTransient<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IProductLogic, ProductLogic>();
 
             services.AddStackExchangeRedisCache(options =>
             {
