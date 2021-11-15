@@ -17,10 +17,6 @@ namespace Restaurant.Logic
             _productRepository = productRepository;
             _logger = logger;
         }
-        ~ProductLogic()
-        {
-            _logger.LogError($"asdasdasdassad");
-        }
 
         public async Task<Product> Buy(BuyRequest buyRequest)
         {

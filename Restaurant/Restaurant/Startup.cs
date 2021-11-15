@@ -22,10 +22,10 @@ namespace Restaurant
         {
 
             //for cache testing
-            //services.AddTransient<IProductRepository, ProductRepositoryWrapper>();
-            //services.AddTransient<ProductRepository>();
+            services.AddTransient<IProductRepository, ProductRepositoryWrapper>();
+            services.AddTransient<ProductRepository>();
 
-            services.AddTransient<IProductRepository, ProductRepository>();
+            //   services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddTransient<IProductLogic, ProductLogic>();
 

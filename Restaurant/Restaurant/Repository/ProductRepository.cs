@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Restaurant.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ namespace Restaurant.Repository
     public class ProductRepository : IProductRepository
     {
         public string _connectionString;
+        readonly ILogger<ProductRepository> _logger;
 
-        public ProductRepository(IConfiguration configuration)
+        public ProductRepository(IConfiguration configuration, ILogger<ProductRepository> logger)
         {
             _connectionString = configuration.GetConnectionString("sqlServer");
+            _logger = logger;
         }
 
         public async Task<Product> GetByNameAsync(string name)
@@ -45,6 +48,8 @@ namespace Restaurant.Repository
             var sql = "SELECT name FROM Product;";
 
             await Task.Delay(3000);
+
+            _logger.LogWarning($"Connection string: {_connectionString}");
 
             using (var connection = new SqlConnection(_connectionString))
             {
